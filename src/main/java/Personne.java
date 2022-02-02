@@ -7,13 +7,15 @@ public class Personne {
         this.m = null;
     }
 
-   void porteMontre(Montre m) {
+   void attribuerMontre(Montre m) {
         if (this.m == null ) {
             this.m = m;
-            System.out.println("La montre a été attribuée a: "+ this.nom);
+            System.out.println("La montre a bien été attribuée à: "+ this.nom);
+            System.out.println("------------------------------------------------------------------------------------------------------");
         }
         else{
-            System.out.println("Vous avez déja une montre");
+            System.out.println("Désolé, nous ne pouvons pas vous donner une autre montre car vous en avez déja une");
+            System.out.println("------------------------------------------------------------------------------------------------------");
         }
     }
 
@@ -21,18 +23,20 @@ public class Personne {
         if(this.m != null){
             this.m = null;
             System.out.println("La montre a bien été retirée à: "+ this.nom);
+            System.out.println("------------------------------------------------------------------------------------------------------");
         }
         else{
-            System.out.println("Vous n'avez aucune montre");
+            System.out.println("Impossible de vous retirer une montre car vous n'en avez aucune");
+            System.out.println("------------------------------------------------------------------------------------------------------");
         }
     }
 
-    void donneHeure(){
+   public String donneHeure(){
         if(this.m != null){
-            System.out.println(this.m.heure + "h" + this.m.min + "min");
+            return this.m.heure + "h" + this.m.minute + "min";
         }
         else {
-            System.out.println("Désolé, vous n'avez pas de montre");
+            return "Désolé, vous n'avez pas de montre pour lire l'heure";
         }
     }
 
@@ -40,20 +44,5 @@ public class Personne {
         p.donneHeure();
     }
 
-    void avance(){
-        if(this.m.min==59){
-            if(this.m.heure == 23){
-                this.m.heure = 0;
-            }
-            else {
-                this.m.heure = this.m.heure++;
-            }
-            this.m.min = 00;
-            this.m.heure++;
-        }
-        else {
-            this.m.min++;
-        }
-    }
 }
 

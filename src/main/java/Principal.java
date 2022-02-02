@@ -7,16 +7,10 @@ public class Principal {
         Personne p = new Personne("Hilary");
         Personne l = new Personne("Amos");
 
-        m.Affiche();
-        n.Affiche();
-
-        p.porteMontre(m);
-        l.porteMontre(n);
-        p.porteMontre(m);
+        p.attribuerMontre(m);
+        l.attribuerMontre(n);
         l.demandeHeure(p);
         p.enleveMontre();
-        l.avance();
-        l.m.Affiche();
 
 
 
