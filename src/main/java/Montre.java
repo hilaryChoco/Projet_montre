@@ -28,6 +28,7 @@ public class Montre {
         }
         else {
             this.minute++;
+            System.out.println();
         }
     }
 
